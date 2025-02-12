@@ -23,4 +23,12 @@ public class PlayerService {
         }
         return players;
     }
+    public Player findById(Long id){
+        Player value =  playerRepository.findById(id).orElse(null);
+        return value;
+    }
+    public Player getBatsman(String batsman){
+        return playerRepository.findByBatsman(batsman).orElse(null);
+    }
+
 }

@@ -20,4 +20,13 @@ public class PlayerController {
     public List<Player> getAllPlayers() {
         return playerService.getAllPlayers();
     }
+    @GetMapping("/{id}")
+    public Player getById(@PathVariable Long id){
+        return playerService.findById(id);
+    }
+    @GetMapping("/batsman/{batsman}")
+    public Player getByBatsman(@PathVariable String batsman){
+        return playerService.getBatsman(batsman);
+    }
+
 }

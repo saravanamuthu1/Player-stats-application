@@ -1,13 +1,15 @@
 package com.ipl.playerstats.player;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name="player_stats")
 public class Player {
+
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String batsman;
     private int total_runs;
     private int out;
@@ -39,7 +41,13 @@ public class Player {
     public void setName(String name) {
         this.name = name;
     }
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
     public String getBatsman() {
         return batsman;
     }
